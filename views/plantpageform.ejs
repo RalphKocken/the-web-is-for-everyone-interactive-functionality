@@ -1,0 +1,46 @@
+<%- include('./partials/head.ejs') %>
+
+<fieldset>
+	<form class="add-plant-form" action="/new" method="post">
+		<h2>Stekje aanmelden</h2>
+
+		<div>
+			<label for="naam">Naam van stekje:</label>
+			<input type="text" name="naam" id="naam" placeholder="..." value="<% locals.naam ?? '' %>" />
+		</div>
+
+		<div>
+			<label for="landvanherkomst">Land van herkomst:</label>
+			<input type="text" name="landvanherkomst" id="landvanherkomst" placeholder="..." value="<% locals.landvanherkomst ?? '' %>" />
+		</div>
+
+		<div>
+			<label for="giftig">Giftig?:</label>
+			<input type="text" name="giftig" id="giftig" placeholder="..." value="<% locals.giftig ?? '' %>" />
+		</div>	
+
+		<div>
+			<label for="verpotten">Verpotten?</label>
+			<input type="text" name="verpotten" id="verpotten" placeholder="..." value="<% locals.verpotten ?? '' %>" />
+		</div>		
+
+		<div>
+			<label for="voeding">Voeding?</label>
+			<input type="text" name="voeding" id="voeding" placeholder="..." value="<% locals.voeding ?? '' %>" />
+		</div>
+
+		<div>
+			<label for="plantimage">Upload een foto van het stekje</label>
+			<input type="text" name="plantimage" id="plantimage" value="<% locals.fotos ?? '' %>" />
+		</div>
+
+		<div>
+			<label for="describeplant">Omschrijf het stekje</label>
+			<textarea input type="text" rows="4" cols="50"></textarea>
+		</div>
+
+		<input type="submit" value="Opslaan" /> 
+	</form>
+</fieldset>
+
+<%- include('./partials/foot.ejs') %>

@@ -1,0 +1,74 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+<%- include('./partials/header') %>
+
+<main> 
+  <section class="useage-wrapper">
+    <section class="banner">
+      <span class="banner-line-1">KOM JE</span>
+      <span class="banner-line-2">STEKJE</span>
+      <span class="banner-line-3">RUILEN!</span>
+    </section>
+
+    <section class="useage">
+      <h2 class="subtitle-utility subtitle-text-regular usage-title">Hoe werkt het?</h2>
+      <p class="text-box useage-text">Heb jij één of meerdere plantenstekjes over en zou je die graag willen ruilen voor een nieuw plantje? Meld je stekje aan en kies er eentje uit de stekjeskast om te ruilen. Bekijk de stekjes die momenteel in de stekjeskast zitten. Kies er 1 (maximaal 2) uit en reserveer het stekje via de website. Kom het stekje ophalen bij de OBA Linnaeusstraat. De stekjes blijven na reservering 24 uur voor jou beschikbaar.
+        Een stekje doneren mag natuurlijk ook! Hiervoor kun je gewoon langskomen bij de OBA en hoef je geen formulier in te vullen.</p>
+    <a class="add-plant-button" href="/new"> Stekje aanmelden</a>
+    </section>
+  </section>
+
+  <section class="plant-list-container">  
+    <h2 class="subtitle-text-regular subtitle-utility plant-list-title">Bekijk onze stekjes</h2>
+    <section class="plant-list">
+      <% stekjes.forEach(stekje => { %>
+        <a class="plant-link" href="/plantpage/<%= stekje.id %>">
+
+
+          <% if (stekje.fotos[0]) { %>
+
+            <img class="plant-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+
+          <% }else{ %>
+
+            <img src="/assets/images/plant-flower.png" width="100%">
+
+            <% } %>
+
+            <h4 class="plant-title"><%= stekje.naam %></h4>
+        </a>
+
+      <% }) %>
+    </section>
+  </section>
+
+  <section class="general-information">
+    <section class="about us">
+      <h2 class="subtitle-text-regular subtitle-utility">Over ons</h2>
+      <p class="text-box">De Buurtcampus Oost heeft als doel Amsterdam-Oost duurzamer, inclusiever en gezonder te maken. Plant Swap Amsterdam zorgt ervoor dat plantenliefhebbers elkaar ontmoeten in de bibliotheek. Daarnaast hebben planten in huis een positief effect op je lichamelijke en geestelijke gezondheid. Veel mensen weten niet goed hoe ze voor planten moeten zorgen en kopen nieuwe als ze dood gaan. In het kader van duurzaamheid, gezondheid en meer sociale connectie, is PlantSwap Amsterdam een plek van sociale ontmoeting, waar mensen samen leren over planten.</p>
+    </section>
+
+    <section class="workshops">
+      <h2 class="subtitle-text-regular subtitle-utility">Workshops</h2>
+      <p class="text-box">De eerste workshop ‘Planten stekken en verzorgen’ zal plaatsvinden in maart 2023 in de OBA Linnaeusstraat, meld je hier aan voor meer informatie en om op de hoogte te blijven.</p>
+    </section>
+
+    <section class="care-tips">
+      <h2 class="subtitle-text-regular subtitle-utility">Verzorgingstips</h2>
+      <p class="text-box">
+        Stek je plantjes bij voorkeur in het voorjaar. Er is genoeg licht en warmte om je plantjes goed te laten groeien.
+      </p>
+      <p class="text-box">Maak je plantenpotjes goed schoon voor je gaat stekken, zo ga je schimmelvorming tegen.</p>
+      <p class="text-box">Gebruik een scherpe snoeischaar voor het knippen, ook zo ga je schimmelvorming tegen.</p>
+    </section>
+ 
+
+    <section class="buurtcampus-googlemaps">
+      <h3 class="subtitle-text-regular subtitle-utility">Locatie</h3>
+      <iframe title="buurtcampus-location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.6761957784674!2d4.92404451559515!3d52.358157855963306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60976cd336d71%3A0x6610b420a3c48f0e!2sLinnaeusstraat%2044%2C%201092%20CL%20Amsterdam!5e0!3m2!1snl!2snl!4v1667915508745!5m2!1snl!2snl" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </section>
+
+</main>
+
+<%- include('./partials/foot') %>

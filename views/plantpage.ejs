@@ -1,0 +1,31 @@
+<%- include('./partials/head') %>
+<%- include('./partials/nav') %>
+
+    <section class="plant-page-header">
+        <% if (stekje.fotos[0]) { %>
+            <img class="plant-page-header-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+        <% }else{ %>
+            <img src="/assets/images/plant-flower.png" width="300px">
+        <% } %>
+        <section class="plant-page-header-content">   
+            <h4 class="plant-page-plant-title"><%= stekje.naam %></h4>
+            <button class="reserve-plant-button">Deze wil ik!</button>
+        </section>
+    </section>
+
+    <section class="plant-page-plant-info">
+        <section class="plant-page-plant-info-box">
+            <h4 class="plant-page-plant-info-title">Land van herkomt</h4>
+            <p><%= stekje.landvanherkomst %></p>
+        </section>
+        <section class="plant-page-plant-info-box">
+            <h4 class="plant-page-plant-info-title">Verpotten</h4>
+            <p><%= stekje.verpotten %></p>
+        </section>
+        <section class="plant-page-plant-info-box">
+            <h4 class="plant-page-plant-info-title">Voeding</h4>
+            <p><%= stekje.voeding %></p>
+        </section>
+    </section>
+
+<%- include('./partials/foot') %>
