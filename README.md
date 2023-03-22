@@ -13,20 +13,6 @@
 
 ## Beschrijving
 
-Voor Tolga hier het voorbeeld uit het college:
-
-```
-Server.js + express
-          + routes/index.js + .env
-                            + express
-                            + helpers/fetchWrapper.js
-                            -> views/index.ejs
-          + routes/member.js + .env
-                             + express
-                             + helpers/fetchWrapper.js
-                             -> views/member.ejs
-                             -> views/memberForm.ejs
-```
 
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
 <!-- Voeg een mooie poster visual toe 📸 -->
