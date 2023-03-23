@@ -21,12 +21,12 @@
 
 		<div>
 			<label for="verpotten">Verpotten?</label>
-			<input type="text" name="verpotten" id="verpotten" placeholder="..." value="<% locals.verpotten ?? '' %>" />
+			<input type="text" name="verpotten" id="verpotten" placeholder="..." value="<% locals.verpotten %>" />
 		</div>		
 
 		<div>
 			<label for="voeding">Voeding?</label>
-			<input type="text" name="voeding" id="voeding" placeholder="..." value="<% locals.voeding ?? '' %>" />
+			<input type="text" name="voeding" id="voeding" placeholder="..." value="<% locals.voeding %>" />
 		</div>
 
 		<div>
@@ -36,7 +36,7 @@
 
 		<div>
 			<label for="describeplant">Omschrijf het stekje</label>
-			<textarea input type="text" rows="4" cols="50"></textarea>
+			<textarea input type="text" name="beschrijving" rows="4" cols="50"><%= locals.beschrijving ?? '' %></textarea>
 		</div>
 
 		<input type="submit" value="Opslaan" /> 

@@ -51,17 +51,26 @@
   /* nav */
   
   nav{
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem 1rem 0 1rem;
+    padding: 0 2rem;
     overflow: hidden;
+    background-color: var(--main-ambiance-background-color);
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    z-index: 1;
+    color: white;
   }
   
   .nav-plantswap-logo{
-    width: 10rem;
+    width: 8rem;
+  }
+
+  .nav-home-icon{
+    color: var(--title-text-color)
   }
 
   /* header */
@@ -81,7 +90,6 @@
     object-fit: cover;
     opacity: 0;
     transition: 1s ease-in-out;
-    border-radius: 180px 180px 0px 180px;
   }
   
   .show-homepage-image{
@@ -96,9 +104,9 @@
     color: var(--title-text-color);
     width: 100%;
     max-width: 35rem;
-    margin: 0 auto;
     padding: 2rem 4rem;
     overflow: hidden;
+    margin: 2rem auto 0 auto;
   }
 
   .banner::after{
@@ -112,6 +120,11 @@
     z-index: -1;
   }
   
+  .banner::after{
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    border-radius: 50%;
+  }
+
   .banner-line-1{
     font-size: 40px;
     margin: 0 auto 0 0;
@@ -127,17 +140,7 @@
     font-size: 40px;
     margin: 0 0 0 auto;
   }
-  
-  .banner-background-field{
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    left: 30%;
-    z-index: -1;
-    transform: translateX(-100px) translateY(50px) rotate(-50deg);
-    border-radius: 90px;
-  }
-  
+
   .useage{
     display: flex;
     flex-direction: column;
@@ -161,11 +164,17 @@
     background-color: var(--title-text-color);
     color: white;
     border-radius: 25px;
+    text-decoration: none;
     border: none;
     padding: 1rem;
     text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
-  
+
+  .add-plant-button:hover{
+    background-color: #987554;
+  } 
+
   /* plant list */
   
   .plant-list-container{
@@ -173,18 +182,18 @@
     margin: 2rem 0 0 0;
     overflow: hidden;
   }
-  
+
   .plant-list-title{
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
     height: 5rem;
-    background-color: var(--main-ambiance-background-color);
-    border-radius: 100px 0 0 0;
+    margin: 1rem 2rem;
   }
   
   .plant-list{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -193,14 +202,39 @@
     padding: 1rem 2rem 1rem 2rem;
   }
   
+    .plant-list::before{
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -300px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background-color: var(--main-ambiance-background-color);
+      z-index: -1;
+    }
+
+  .plant-list::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background-color: var(--main-ambiance-background-color);
+    z-index: -1;
+  }
+
+
   .plant-link{
     width: 40%;
     max-width: 13.5rem;
     text-decoration: none;
     color: var(--title-text-color);
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     border-radius: 8px;
     transition: .2s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 
   .plant-link:hover{
@@ -209,18 +243,23 @@
   
   .plant-image{
     width: 100%;
-    height: auto;
+    height: 15rem;
     object-fit: cover;
     border-radius: 8px 8px 0 0;
   }
   
   .plant-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 100%;
     padding: 0.5rem;
     height: 4.5rem;
-    text-align: center;
+    margin-top: -5px;
     background-color: white;
     border-radius: 0 0 8px 8px;
+
   }
     /* general information */
   
@@ -234,7 +273,7 @@
     overflow: hidden;
   }  
 
-  .general-information::after{
+  /* .general-information::after{
     content: '';
     position: absolute;
     top: 0;
@@ -243,11 +282,11 @@
     left: 0;
     background-color: var(--main-ambiance-background-color);
     z-index: -1;
-  }
-
+  } */
+/* 
   .general-information::after{
-    clip-path: ellipse(50% 25% at 50% 50%);
-  }
+    clip-path: polygon(50% 0%, 100% 50%, 50% 50%, 0% 50%);
+  } */
 
   .general-information > section{
     width: 100%;
@@ -267,12 +306,19 @@
     position: relative;
     margin: 2rem auto 0 auto;
     width: 100%;
+    background-color: var(--main-ambiance-background-color);
+    padding: 1rem;
   }
   
   footer > img{
     width: 90%;
     max-width: 50rem;
     margin: 0 auto;
+  }
+
+  footer > p{
+    width: 50%;
+    text-align: center;
   }
 
   /* PLANT PAGE */
@@ -363,9 +409,14 @@
       justify-content: flex-start;
       flex-wrap: nowrap;
       overflow-x: auto;
+      overflow-y: hidden;
       padding: 1rem 2rem 2rem 3rem;
     }
   
+    .useage-wrapper{
+      align-items: flex-start;
+    }
+
     .useage{
       background-color:rgba(255, 255, 255, 0.7);
       border-radius: 20px;
@@ -428,34 +479,38 @@
   }
 
   @media only screen and (min-width: 1024px){
-    .homepage-images{
-      width: 90%;
+
+    .homepage-image{
+      min-height: 30rem;
     }
   
     .banner{
+      display: flex;
+      flex-direction: column;
       padding: 0rem 6rem;
+      justify-content: center;
+      z-index: 1;
     }
 
     .banner-line-1{
-      font-size: 80px;
+      font-size: 60px;
     }
 
     .banner-line-2{
-      font-size: 120px;
+      font-size: 80px;
     }
 
     .banner-line-3{
-      font-size: 80px;
-    }
-  
-    .banner-background-field{
-      top: 0;
-      left: 40%;
+      font-size: 60px;
     }
   
     .useage-wrapper{
       padding: 3rem 0 0 0;
       flex-direction: row;
+    }
+
+    .general-information > section{
+      max-width: 30rem;
     }
   
     /* plant page*/
@@ -464,7 +519,6 @@
       height: 350px;
       flex-direction: row;
       width: 70%;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
       border-radius: 50px;
     }
 
@@ -499,5 +553,4 @@
       width: 70%;
       max-width: 20rem;
     }
-
   }

@@ -23,18 +23,11 @@
     <section class="plant-list">
       <% stekjes.forEach(stekje => { %>
         <a class="plant-link" href="/plantpage/<%= stekje.id %>">
-
-
           <% if (stekje.fotos[0]) { %>
-
             <img class="plant-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
-
           <% }else{ %>
-
-            <img src="/assets/images/plant-flower.png" width="100%">
-
+            <img class="plant-image" src="/assets/images/plant(9).avif">
             <% } %>
-
             <h4 class="plant-title"><%= stekje.naam %></h4>
         </a>
 

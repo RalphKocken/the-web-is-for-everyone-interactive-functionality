@@ -26,6 +26,8 @@ server.get('/', (request, response) => {
   })
 })
 
+// Detail pagina// 
+
 server.get('/plantpage/:id', (request, response) => {
   const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
   let id = request.params.id
@@ -42,17 +44,21 @@ server.get('/new', (request, response) => {
 server.post('/new', (request, response) => {
   const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
   const url = baseUrl + '/stekjes'
-
+  request.body.aanmelddatum = (new Date()).toISOString();
   postJson(url, request.body).then((data) => {
     let newStekje = { ... request.body }
 
     if (data.success) {
-      response.redirect('/?memberPosted=true') 
+      response.redirect('/') 
       // TODO: squad meegeven, message meegeven
       // TODO: Toast meegeven aan de homepagina
-    } else {
+    } 
+    
+    else {
       const errormessage = `${data.message}: Mogelijk komt dit door de slug die al bestaat.`
       const newdata = { error: errormessage, values: newStekje }
+      console.log(data)
+      console.log(JSON.stringify(data))
       response.render('plantpageform', newdata)
     }
   })
@@ -95,34 +101,3 @@ export async function postJson(url, body) {
     .catch((error) => error)
 }
 
-
-
-// import express from 'express'
-// import indexRoute from './routes/index.js'
-// import plantpageRoute from './routes/plantpage.js'
-
-// // Maak een nieuwe express app
-// const server = express()
-
-// // Stel het poortnummer in
-// server.set('port', process.env.PORT || 8000)
-
-// // Stel de view engine in
-// server.set('view engine', 'ejs')
-// server.set('views', './views')
-
-// // Stel de public map in
-// server.use(express.static('public'))
-
-// // Stel afhandeling van formulieren in
-// server.use(express.json())
-// server.use(express.urlencoded({ extended: true }))
-
-// // Stel de routes in
-// server.use('/', indexRoute)
-// server.use('/plantpage', plantpageRoute)
-
-// // Start met luisteren
-// server.listen(server.get('port'), () => {
-//   console.log(`Application started on http://localhost:${server.get('port')}`)
-// })
