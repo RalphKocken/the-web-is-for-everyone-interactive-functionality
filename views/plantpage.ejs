@@ -1,37 +1,68 @@
-<%- include('./partials/head') %>
-<%- include('./partials/nav') %>
+<%- include('./partials/plantpage-head') %>
 
-<main class="plant-page-main">
-    <section class="plant-page-header">
-        <% if (stekje.fotos[0]) { %>
-            <img class="plant-page-header-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
-        <% }else{ %>
-            <img  class="plant-page-header-image" src="/assets/images/plant(9).avif">
-        <% } %>
+<main>
+    <section class="content-wrapper">
+        <section class="plant-page-header">
+            <% if (stekje.fotos[0]) { %>
+                <img class="plant-page-header-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+            <% }else{ %>
+                <img  class="plant-page-header-image" src="/assets/images/plantphoto.webp">
+            <% } %>
+                <h3 class="plant-page-plant-title"><%= stekje.naam %></h3>
+        </section>
         <section class="plant-page-header-content">   
-            <h4 class="plant-page-plant-title"><%= stekje.naam %></h4>
-            <button class="reserve-plant-button">Deze wil ik!</button>
+            <section class="plant-page-plant-info">
+                <section class="header-wrapper">
+                    <h3 class="temp-title"><%= stekje.naam %></h3>
+                    <img class="header-logo" src="/assets/images/PlantSwap-logo.png">
+                </section>
+
+                <!-- <section class="plant-page-plant-info-box">
+                    <h4 class="plant-page-plant-info-title">Waar komt dit plantje vandaan?</h4>
+                    <% if(stekje.landvanherkomst){ %>
+                    <p> Dit plantje komt uit <%= stekje.landvanherkomst %></p>
+                    <%}else{ %>
+                    <p><i>geen informatie beschikbaar</i></p>
+                    <%} %>
+                </section> -->
+               
+                <section class="plant-page-plant-info-box">
+                    <img class="plantpage-icon" src="/assets/images/plantpoticon.png">
+                    <h4 class="plant-page-plant-info-title">Moet ik dit plantje verpotten?</h4>
+                        <% if (stekje.verpotten){ %>
+                        <p><%= stekje.verpotten %></p>
+                        <%}else{ %>
+                        <p><i>geen informatie beschikbaar</i></p>
+                        <% } %>
+                </section>
+                <section class="plant-page-plant-info-box">
+                    <img class="plantpage-icon" src="/assets/images/fertilizericon.png">
+                    <h4 class="plant-page-plant-info-title">Moet ik dit plantje voeding geven?</h4>
+                    <% if (stekje.voeding){ %>
+                    <p><%= stekje.voeding %></p>
+                    <%}else{ %>
+                    <p><i>geen informatie beschikbaar</i></p>
+                    <%} %>
+                </section>
+                <section class="plant-page-plant-info-box">
+                    <img class="plantpage-icon" src="/assets/images/poisonicon.png">
+                    <h4 class="plant-page-plant-info-title">Is dit plantje giftig?</h4>
+                    <% if(stekje.giftig){ %>
+                    <p><%= stekje.giftig %></p>
+                    <%}else { %>
+                    <p><i>geen informatie beschikbaar</i></p>
+                    <%} %>
+                </section>
+                <section class="plant-page-plant-info-box button-box">    
+                    <button class="reserve-plant-button">Deze wil ik!</button>
+                </section>
+            </section>        
         </section>
     </section>
 
-    <section class="plant-page-plant-info">
-        <section class="plant-page-plant-info-box">
-            <h4 class="plant-page-plant-info-title">Land van herkomt</h4>
-            <p><%= stekje.landvanherkomst %></p>
-        </section>
-        <section class="plant-page-plant-info-box">
-            <h4 class="plant-page-plant-info-title">Verpotten</h4>
-            <p><%= stekje.verpotten %></p>
-        </section>
-        <section class="plant-page-plant-info-box">
-            <h4 class="plant-page-plant-info-title">Voeding</h4>
-            <p><%= stekje.voeding %></p>
-        </section>
-        <section class="plant-page-plant-info-box">
-            <h4 class="plant-page-plant-info-title">Beschrijving</h4>
-            <p><%= stekje.beschrijving %></p>
-        </section>
-    </section>
 
 </main>
+
+
 <%- include('./partials/foot') %>
+

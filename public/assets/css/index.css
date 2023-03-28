@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-background-color: #E8FAEA;
+    --main-text-font: 'Jost', sans-serif;
+    --title-text-color: #654321;
+}
+
+/* font-sizes */
+
+h3{
+    font-size: 24px;
+    color: var(--title-text-color);
+}
+
+/* BODY */
+
+body{
+    font-family: var(--main-text-font);
+    background-color: var(--main-background-color);
+}
+
+/* NAV */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 0 1rem;
+    background-color: var(--main-background-color);
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.nav-logo{
+    width: 8rem;
+}
+
+/* HEADER */
+
+.header-logo{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    width: 8rem;
+}
+
+.header-images{
+    position: relative;
+    width: 100%;
+    height: 14rem;
+}
+
+.header-image{
+    position: absolute;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    opacity: 0;
+    transition: 1s ease-in-out;
+    z-index: -1;
+}
+
+.show-header-image{
+    opacity: 1;
+  }
+  
+.banner{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5% 0 auto;
+    padding: 1rem;
+    color: var(--title-text-color);
+    background: rgba(255,255,255, 0.7);;
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}  
+
+.banner-line-1{
+    font-size: 32px;
+    margin: 0 auto 0 0;
+}
+
+.banner-line-2{
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.banner-line-3{
+    font-size: 32px;
+    margin: 0 0 0 auto;
+}
+
+.how-to-use{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 2rem 0 auto;
+    padding: 5rem 0 4rem 0;
+    background-color: white;
+    z-index: -1;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.how-to-use-title{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.how-to-use-text{
+    margin: 0 auto;
+    width: 90%;
+    padding: 1rem;
+}
+
+.add-plant-button{
+    margin: 1rem 0 0 0;
+    background-color: var(--title-text-color);
+    font-size: 16px;
+    height: 4rem;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+}
+
+/* plant-list */
+
+
+.show-success-message{
+    display: none;
+}
+
+.plant-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0 4rem 0;
+    margin: 4rem 0 0 0;
+}
+.plant-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.plant-list-title{
+    color: var(--title-text-color);
+    text-align: center;
+    padding: 0 0 1rem 0;
+}
+
+.plant-link{
+    width: 90%;
+    max-width: 15rem;
+}
+
+.plant-list-image{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.plant-list-plant-title{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 1rem 0;
+    text-align: center;
+    margin: -5px 0 0 0;
+    background-color: white;
+    border: 2px solid var(--title-text-color);
+    font-size: 16px;
+}
+
+.load-more-plants-button{
+    background-color: var(--title-text-color);
+    font-size: 16px;
+    height: 4rem;
+    margin: 4rem 0 0 0;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-family: "Jost", sans-serif;
+    font-weight: 700;
+}
+
+/* general information */
+
+.general-information{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 5rem 0 0 0;
+}
+
+.general-information > section{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.about-us, .donate-plant{
+    width: 90%;
+    background-color: white;
+    margin: 0 0 0 auto;
+    padding: 4rem 1rem;
+}
+
+.workshops{
+    width: 90%;
+    background-color: white;
+    margin: 0 auto 0 0;
+    padding: 4rem 1rem;
+}
+
+.about-us-title,
+.workshops-title, 
+.donate-plant-title,
+.buurtcampus-googlemaps-title{
+    text-align: center;
+    padding: 1rem;
+}
+
+.buurtcampus-googlemaps{
+    background-color: white;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 5rem 0 0 0;
+}
+
+.footer-image{
+    width: 70%;
+}
+
+.footer-text{
+    padding: 0 2rem 1rem 2rem;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 500px){
+
+    .plant-list{
+        gap: 2rem;
+    }
+}
+
+@media only screen and (min-width: 678px){
+
+    body{
+        font-size: 20px;
+    }
+
+    .header-images{
+        height: 17rem;
+    }
+
+    .header-image{
+        height: 25rem;
+    }
+
+    .banner{
+        max-width: 25rem;
+    }
+
+    .banner-line-1, 
+    .banner-line-3{
+        font-size: 44px;
+    }
+    
+    .banner-line-2{
+        font-size: 64px;
+    }
+
+    .add-plant-button{
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+
+    .general-information-part{
+        /* width: 40%;
+        margin: 0; */
+        padding: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    /* body{
+
+        /* width: 80%;
+        margin: 0 auto; */
+    /* } */ 
+
+    .header-image{
+        height: 30rem;
+    }
+    
+    .banner{
+        max-width: 35rem;
+    }
+    
+    .how-to-use{
+        margin: 4rem 20rem 0 auto;
+    }
+
+    .plant-list{
+        padding: 0 5rem 0 5rem;
+    }
+
+    .general-information{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    } 
+
+    .general-information-part{
+        width: 40%;
+        margin: 0;
+    }
+}
