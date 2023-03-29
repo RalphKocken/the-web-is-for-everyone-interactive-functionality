@@ -11,8 +11,11 @@ const index = express.Router()
 index.get('/', (request, response) => {
     const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
     const stekjeUrl = baseUrl + '/stekjes?first=6'
+
     fetchJson(stekjeUrl).then((data) =>{
-      response.render('index', {posted: request.query.posted})
+      response.render('index',{stekjes:data.stekjes, posted: request.query.posted})
+      console.log(data)
+      console.log({stekjes: data.stekjes})
     })
   })
   
@@ -29,7 +32,7 @@ index.post('/plantform', (request, response) => {
     if (data.success) {
       response.redirect('/?posted=true')
     }
-    
+
     else {
       const errormessage = `${data.message}: Er is iets mis gegaan`
       const newdata = { error: errormessage, values: newStekje }
