@@ -12,8 +12,7 @@ index.get('/', (request, response) => {
     const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
     const stekjeUrl = baseUrl + '/stekjes?first=6'
     fetchJson(stekjeUrl).then((data) =>{
-      response.render('index', {stekjes: data, posted: request.query.posted})
-      console.log({stekjes: data})
+      response.render('index', {posted: request.query.posted})
     })
   })
   
