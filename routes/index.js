@@ -12,10 +12,12 @@ index.get('/', (request, response) => {
     const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
     const stekjeUrl = baseUrl + '/stekjes?first=6'
 
-    fetchJson(stekjeUrl).then((data) =>{
-      response.render('index',{stekjes:data.stekjes, posted: request.query.posted})
-      console.log(data)
-      console.log({stekjes: data.stekjes})
+fetchJson(stekjeUrl).then((data) =>{
+      let renderData = { 
+        stekjes: data.stekjes, // dit is de data uit de stekjes API
+        posted: request.query.posted // get als ?posted=true#plant-list als parameter wordt meegestuurd, 
+      }
+      response.render('index', renderData)
     })
   })
   
@@ -30,7 +32,7 @@ index.post('/plantform', (request, response) => {
   postJson(url, request.body).then((data) => {
     let newStekje = { ... request.body }
     if (data.success) {
-      response.redirect('/?posted=true')
+      response.redirect('/?posted=true#plant-list-container' +id)
     }
 
     else {

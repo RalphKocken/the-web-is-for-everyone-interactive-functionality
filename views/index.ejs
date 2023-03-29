@@ -3,15 +3,13 @@
 
 <main>
 
-    <% if (posted) { %>
-    <div><p>posted</p></div>
-    <% }else{ %>
-    <p>nee</p>
-    <% } %>
 
     <section class="plant-list-container"> 
+        <% if (posted) { %>
+        <div><p>Uw Stekje is geplaatst</p></div>
+        <% } %>
         <h2 class="plant-list-title">Onze Stekjes</h2>
-        <section class="plant-list">       
+        <section class="plant-list" id="plant-list">       
             <% stekjes.forEach(stekje => { %>
             <a class="plant-link" href="/plantpage/<%= stekje.id %>">
                 <% if (stekje.fotos[0]) { %>
@@ -20,8 +18,6 @@
                 <img class="plant-list-image" src="/assets/images/plantphoto.webp">
                 <% } %>
                 <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
-
-                
             </a>
             <% }) %>
         </section>
