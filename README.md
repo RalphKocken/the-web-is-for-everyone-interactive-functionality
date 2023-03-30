@@ -1,8 +1,8 @@
-# Titel
+# PlantSwap
 
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
-PlantSwap
+
 
 "Een website in opdracht van de Buurtcampus Amsterdam Oost"
 ![visualstekjesbieb](https://user-images.githubusercontent.com/106448490/228855309-29928e34-55c6-4369-85e9-ecf02c06494a.png)
