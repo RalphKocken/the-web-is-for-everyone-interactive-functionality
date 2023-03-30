@@ -31,7 +31,7 @@ User story: "Als buurtbewoner wil ik een stekje kunnen toevoegen met behulp van 
 
 Progressive Enhancement: Een ontwerpstrategie dat ontwerpers de mogelijkheid geeft om robuste code te schrijven. Deze strategie gaat uit van 3 design lagen:
 
-Content Layer: De structuur van de pagina in HTML en in deze opdracht in NodeJS. Bedoeld om de core functionality van de website functioneel te maken. Op deze website bijvoorbeeld het formulier waarmee je een stekje kan aanmelden. Zonder bijvoorbeeld CSS en Javascript werkt het formulier alsnog.
+Content Layer: De structuur van de pagina in HTML en in deze opdracht in NodeJS. Bedoeld om de core functionality van de website functioneel te maken. Op deze website bijvoorbeeld het formulier waarmee je een stekje kan aanmelden. Zonder CSS en Javascript werkt het formulier alsnog.
 
 Presentation Layer: Een laag dat bedoeld is om styling toe te passen waardoor de gebruiker een prettige beleving heeft. Bijvoorbeeld de kleuren en vormen van afbeeldingen, text en knoppen.
 
