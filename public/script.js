@@ -30,3 +30,18 @@ let checkurl = window.location.href;
 if(checkurl.includes('?posted=true')){
   plantList.scrollIntoView({behavior: 'smooth'})}
 
+
+//ENHANCEMENT: Als javascript beschikbaar is, geef de optie om de succesmessage weg te klikken, anders blijft de message gewoon staan.
+
+const closeSuccesMessageButton = document.querySelector(".close-succes-message-button")
+console.log(closeSuccesMessageButton)
+const succesMessage = document.querySelector(".succes-message")
+
+closeSuccesMessageButton.addEventListener("click", closeSuccesMessage)
+
+function closeSuccesMessage(){
+    succesMessage.classList.add("remove-succes-message")
+    succesMessage.addEventListener("animationend", () =>{
+        succesMessage.style.display = "none"
+        plantList.scrollIntoView({behavior: 'smooth', block: 'start'})
+    })}

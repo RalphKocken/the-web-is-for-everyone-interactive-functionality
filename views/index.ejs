@@ -2,26 +2,43 @@
 <%- include('./partials/header') %>
 
 <main>
-
-
     <section class="plant-list-container"> 
         <% if (posted) { %>
-        <div><p>Uw Stekje is geplaatst</p></div>
+        <div class="succes-message">
+            <p>Uw stekje is geplaatst!</p>
+            <button class="close-succes-message-button"><p>X</p></button>
+        </div>
         <% } %>
         <h2 class="plant-list-title">Onze Stekjes</h2>
-        <section class="plant-list" id="plant-list">       
-            <% stekjes.forEach(stekje => { %>
-            <a class="plant-link" href="/plantpage/<%= stekje.id %>">
-                <% if (stekje.fotos[0]) { %>
-                <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
-                <% }else{ %>
-                <img class="plant-list-image" src="/assets/images/plantphoto.webp">
-                <% } %>
-                <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
-            </a>
-            <% }) %>
+        <section class="plant-list" id="plant-list">
+
+                <section class="first-plant">
+                    <% stekjes.slice(0, 1).forEach(stekje => { %>
+                        <a class="plant-link-first-link" href="/plantpage/<%= stekje.id %>">
+                            <% if (stekje.fotos[0]) { %>
+                            <img class="plant-list-image first-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+                            <% }else{ %>
+                            <img class="plant-list-image first-image" src="/assets/images/plantphoto.webp">
+                            <% } %>
+                            <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
+                        </a>
+                    <% }) %>   
+                </section>     
+
+                <section class="rest-of-plants">
+                    <% stekjes.slice(1, 7).forEach(stekje => { %>
+                        <a class="plant-link" href="/plantpage/<%= stekje.id %>">
+                            <% if (stekje.fotos[0]) { %>
+                            <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+                            <% }else{ %>
+                            <img class="plant-list-image" src="/assets/images/plantphoto.webp">
+                            <% } %>
+                            <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
+                        </a>
+                    <% }) %>
+                </section>
         </section>
-        <button class="load-more-plants-button">Laad meer stekjes</button>
+        <button class="load-more-plants-button">Laad meer stekjes(*deze knop werkt nog niet)</button>
     </section>
 
     <section class="general-information">
@@ -49,11 +66,7 @@
             <h3 class="buurtcampus-googlemaps-title">Locatie</h3>
             <iframe title="buurtcampus-location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.6761957784674!2d4.92404451559515!3d52.358157855963306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c60976cd336d71%3A0x6610b420a3c48f0e!2sLinnaeusstraat%2044%2C%201092%20CL%20Amsterdam!5e0!3m2!1snl!2snl!4v1667915508745!5m2!1snl!2snl" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
-
-
-
     </section>
-
 </main>
 
 <%- include('./partials/foot') %>

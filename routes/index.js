@@ -10,7 +10,7 @@ const index = express.Router()
 
 index.get('/', (request, response) => {
     const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
-    const stekjeUrl = baseUrl + '/stekjes?first=6'
+    const stekjeUrl = baseUrl + '/stekjes?'
 
 fetchJson(stekjeUrl).then((data) =>{
       let renderData = { 
@@ -32,7 +32,7 @@ index.post('/plantform', (request, response) => {
   postJson(url, request.body).then((data) => {
     let newStekje = { ... request.body }
     if (data.success) {
-      response.redirect('/?posted=true#plant-list-container' +id)
+      response.redirect('/?posted=true#plant-list-container')
     }
 
     else {
