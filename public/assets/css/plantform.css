@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-background-color: #E8FAEA;
+    --main-text-font: 'Jost', sans-serif;
+    --title-text-color: #654321;
+}
+
+body{
+    font-family: var(--main-text-font);
+    background-color: var(--main-background-color);
+}
+
+h3{
+    font-size: 24px;
+    color: var(--title-text-color);
+}
+
+form{
+    max-width: 30rem;
+    margin: 3rem auto;
+    background-color: white;
+}
+
+.form-plant-title{
+    text-align: center;
+    color: var(--title-text-color)
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    border: none;
+}
+
+fieldset > div{
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    color: var(--title-text-color);
+}
+
+.helper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer{
+    width: 100%;
+}
+
+footer > img{
+    width: 100%;
+}
+
+.helper{
+    position: relative;
+}
+
+.tooltip{
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    right: 3rem;
+    padding: 1rem;
+    width: 10rem;
+    opacity: 0;
+    transition: 0.2s;
+    border-radius: 8px;
+}
+
+.tooltip::after{
+    content:"";
+    position: absolute;
+    right: -1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.name-help-circle:hover ~ .tooltip-name,
+.origin-help-circle:hover ~ .tooltip-origin,
+.poisonous-help-circle:hover ~ .tooltip-poisonous,
+.feed-help-circle:hover ~ .tooltip-feed,
+.repot-help-circle:hover ~ .tooltip-repot{
+    visibility: visible;
+    opacity: 1;
+}
+
+input{
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--title-text-color);
+}
+
+.submit-button{
+    border: none;
+    background-color: var(--title-text-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 25px;
+    width: 10rem;
+    height: 4rem;
+    margin: 0 auto;
+}

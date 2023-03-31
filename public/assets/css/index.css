@@ -134,7 +134,21 @@ nav{
     border-radius: 25px;
     font-family: "Jost", sans-serif;
     font-weight: 700;
+    transition: 0.2s;
 }
+
+.button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.button > span{
+    transition: 0.2s;
+}
+
+.button:hover > p{
+    border-bottom: 2px solid white;
+} 
 
 /* plant-list */
 
@@ -212,6 +226,7 @@ nav{
     border-radius: 25px;
     font-family: "Jost", sans-serif;
     font-weight: 700;
+    transition: 0.2s;
 }
 
 /* general information */

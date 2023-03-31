@@ -1,46 +1,53 @@
-<%- include('./partials/head.ejs') %>
+<%- include('./partials/plantform-head.ejs') %>
 
-<fieldset>
+
 	<form class="add-plant-form" action="plantform" method="post">
-		<h2>Stekje aanmelden</h2>
-
-		<div>
-			<label for="naam">Naam van stekje:</label>
-			<input type="text" name="naam" id="naam" placeholder="..." value="<% locals.naam ?? '' %>" />
-		</div>
-
-		<div>
-			<label for="landvanherkomst">Land van herkomst:</label>
-			<input type="text" name="landvanherkomst" id="landvanherkomst" placeholder="..." value="<% locals.landvanherkomst ?? '' %>" />
-		</div>
-
-		<div>
-			<label for="giftig">Giftig?:</label>
-			<input type="text" name="giftig" id="giftig" placeholder="..." value="<% locals.giftig ?? '' %>" />
-		</div>	
-
-		<div>
-			<label for="verpotten">Verpotten?</label>
-			<input type="text" name="verpotten" id="verpotten" placeholder="..." value="<% locals.verpotten %>" />
-		</div>		
-
-		<div>
-			<label for="voeding">Voeding?</label>
-			<input type="text" name="voeding" id="voeding" placeholder="..." value="<% locals.voeding %>" />
-		</div>
-
-		<div>
-			<label for="plantimage">Upload een foto van het stekje</label>
-			<input type="text" name="plantimage" id="plantimage" value="<% locals.fotos ?? '' %>" />
-		</div>
-
-		<div>
-			<label for="describeplant">Omschrijf het stekje</label>
-			<textarea input type="text" name="beschrijving" rows="4" cols="50"><%= locals.beschrijving ?? '' %></textarea>
-		</div>
-
-		<input type="submit" value="Opslaan" /> 
+		<fieldset>
+				<h2 class="form-plant-title">Stekje aanmelden</h2>
+				<div class="form-plant-name">
+					<div class="form-plant-name-helper helper">
+						<label for="naam">Naam van stekje:</label>
+						<img class="name-help-circle" src="/assets/images/help-circle.svg">
+						<p class="tooltip tooltip-name">Voer hier de naam van het stekje in.</p>
+					</div>
+					<input type="text" name="naam" id="naam" placeholder="..." value="<% locals.naam ?? '' %>" />
+			
+				</div>
+				<div class="form-plant-origin">
+					<div class="form-plant-origin-helper helper">
+						<label for="landvanherkomst">Land van herkomst:</label>
+						<img class="origin-help-circle" src="/assets/images/help-circle.svg">
+						<p class="tooltip tooltip-origin">Voor hier het land waar het stekje vandaan komt in.</p>
+					</div>
+					<input type="text" name="landvanherkomst" id="landvanherkomst" placeholder="..." value="<% locals.landvanherkomst ?? '' %>" />
+			
+				</div>
+				<div class="form-plant-poisonous">
+					<div class="form-plant-poisonous-helper helper">
+						<label for="giftig">Giftig?:</label>
+						<img class="poisonous-help-circle" src="/assets/images/help-circle.svg">
+						<p class="tooltip tooltip-poisonous">Beschrijf hier of het stekje giftig is voor mensen of dieren.</p>
+					</div>	
+					<input type="text" name="giftig" id="giftig" placeholder="..." value="<% locals.giftig ?? '' %>" />
+				</div>	
+				<div class="form-plant-repot">
+					<div class="form-plant-repot-helper helper">
+						<label for="verpotten">Verpotten?</label>
+						<img class="repot-help-circle" src="/assets/images/help-circle.svg">
+						<p class="tooltip tooltip-repot">Beschrijf hier of en wanneer het stekje verpot moet worden.</p>
+					</div>	
+					<input type="text" name="verpotten" id="verpotten" placeholder="..." value="<% locals.verpotten %>" />
+				</div>		
+				<div class="form-plant-feed">
+					<div class="form-plant-feed-helper helper">
+						<label for="voeding">Voeding?</label>
+						<img class="feed-help-circle" src="/assets/images/help-circle.svg">
+						<p class="tooltip tooltip-feed">Beschrijf hier hoevaak het stekje voeding nodig heeft.</p>
+					</div>	
+					<input type="text" name="voeding" id="voeding" placeholder="..." value="<% locals.voeding %>" />
+				</div>
+				<input class="submit-button" type="submit" value="Opslaan" /> 
+		</fieldset>
 	</form>
-</fieldset>
 
 <%- include('./partials/foot.ejs') %>
