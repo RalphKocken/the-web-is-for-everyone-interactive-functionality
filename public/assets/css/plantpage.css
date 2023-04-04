@@ -24,6 +24,28 @@ h3{
 
 /* main */
 
+.back-icon{
+    width: 1.5rem;
+}
+
+.back-button{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--title-text-color);
+    font-weight: 700;
+    border: 1px solid var(--title-text-color);
+    z-index: 1;
+}
+
+.back-button:hover .back-button-text{
+    border-bottom: 1px solid var(--title-text-color);
+}
+
 .content-wrapper{
     width: 100%;
     max-width: 45rem;

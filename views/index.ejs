@@ -24,18 +24,17 @@
                         </a>
                     <% }) %>   
                 </section>     
-
                 <section class="rest-of-plants">
-                    <% stekjes.slice(1, 7).forEach(stekje => { %>
-                        <a class="plant-link" href="/plantpage/<%= stekje.id %>">
-                            <% if (stekje.fotos[0]) { %>
-                            <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
-                            <% }else{ %>
-                            <img class="plant-list-image" src="/assets/images/plantphoto.webp">
-                            <% } %>
-                            <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
-                        </a>
-                    <% }) %>
+                        <% stekjes.slice(1, 7).forEach(stekje => { %>
+                            <a class="plant-link" href="/plantpage/<%= stekje.id %>">
+                                <% if (stekje.fotos[0]) { %>
+                                <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+                                <% }else{ %>
+                                <img class="plant-list-image" src="/assets/images/plantphoto.webp">
+                                <% } %>
+                                <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
+                            </a>
+                        <% }) %>
                 </section>
         </section>
         <button class="load-more-plants-button button">Laad meer stekjes(*deze knop werkt nog niet)</button>
@@ -57,9 +56,12 @@
             <p>Heb jij (net als wij) teveel planten in huis? Wij zijn super blij als je stekjes komt doneren. Je kunt ze aanmelden via de app en daarna neerzetten in de PlantSwap kast in de bieb.</p>
         </section>
 
-        <section class="donate-plant general-information-part">
-            <h3 class="donate-plant-title">Plantje doneren</h3>
-            <p>Heb jij (net als wij) teveel planten in huis? Wij zijn super blij als je stekjes komt doneren. Je kunt ze aanmelden via de app en daarna neerzetten in de PlantSwap kast in de bieb.</p>
+        <section class="care-tips general-information-part">
+            <h3 class="care-tips-title">Verzorgingstips</h3>
+            <p>Stek je plantjes bij voorkeur in het voorjaar. Er is genoeg licht en warmte om je plantjes goed te laten groeien.
+                Maak je plantenpotjes goed schoon voor je gaat stekken, zo ga je schimmelvorming tegen.
+                Gebruik een scherpe snoeischaar voor het knippen van stekjes, ook zo ga je schimmelvorming tegen.
+                Less is more! 2x per week een scheutje water is meer dan genoeg.</p>
         </section>
 
         <section class="buurtcampus-googlemaps">

@@ -1,6 +1,9 @@
 <%- include('./partials/plantform-head.ejs') %>
 
-
+	<a href="/" class="back-button">
+		<img class="back-icon" src="/assets/images/back-button.svg">
+		<p class="back-button-text">Terug</p>
+	</a>
 	<form class="add-plant-form" action="plantform" method="post">
 		<fieldset>
 				<h2 class="form-plant-title">Stekje aanmelden</h2>
@@ -11,7 +14,6 @@
 						<p class="tooltip tooltip-name">Voer hier de naam van het stekje in.</p>
 					</div>
 					<input type="text" name="naam" id="naam" placeholder="..." value="<% locals.naam ?? '' %>" />
-			
 				</div>
 				<div class="form-plant-origin">
 					<div class="form-plant-origin-helper helper">

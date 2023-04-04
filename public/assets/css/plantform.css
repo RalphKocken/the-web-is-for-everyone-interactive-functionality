@@ -9,6 +9,28 @@
     --title-text-color: #654321;
 }
 
+.back-icon{
+    width: 1.5rem;
+}
+
+.back-button{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--title-text-color);
+    font-weight: 700;
+    border: 1px solid var(--title-text-color);
+    z-index: 1;
+}
+
+.back-button:hover .back-button-text{
+    border-bottom: 1px solid var(--title-text-color);
+}
+
 body{
     font-family: var(--main-text-font);
     background-color: var(--main-background-color);
@@ -69,22 +91,14 @@ footer > img{
     display: flex;
     align-items: center;
     background-color: white;
-    right: 3rem;
-    padding: 1rem;
+    right: 2rem;
+    padding: 0.5rem;
     width: 10rem;
     opacity: 0;
     transition: 0.2s;
     border-radius: 8px;
-}
-
-.tooltip::after{
-    content:"";
-    position: absolute;
-    right: -1rem;
-    width: 2rem;
-    height: 2rem;
-    background-color: white;
-    border-radius: 50%;
+    font-size: 14px;
+    border: 1px solid var(--title-text-color);
 }
 
 .name-help-circle:hover ~ .tooltip-name,
@@ -109,6 +123,11 @@ input{
     font-weight: 700;
     border-radius: 25px;
     width: 10rem;
-    height: 4rem;
+    height: 3rem;
     margin: 0 auto;
+    transition: 0.2s;
+}
+
+.submit-button:hover{
+    transform: scale(1.05);
 }
