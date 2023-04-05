@@ -1,9 +1,11 @@
 <%- include('./partials/plantform-head.ejs') %>
 
 	<a href="/" class="back-button">
-		<img class="back-icon" src="/assets/images/back-button.svg">
+		<img class="back-icon-white" src="/assets/images/back-button-white.svg">
 		<p class="back-button-text">Terug</p>
 	</a>
+
+	<img class="ambiance-picture" src="/assets/images/ambiancepicture.jpg">
 	<form class="add-plant-form" action="plantform" method="post">
 		<fieldset>
 				<h2 class="form-plant-title">Stekje aanmelden</h2>
@@ -51,5 +53,3 @@
 				<input class="submit-button" type="submit" value="Opslaan" /> 
 		</fieldset>
 	</form>
-
-<%- include('./partials/foot.ejs') %>

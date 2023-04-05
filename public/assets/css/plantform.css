@@ -9,7 +9,7 @@
     --title-text-color: #654321;
 }
 
-.back-icon{
+.back-icon-white{
     width: 1.5rem;
 }
 
@@ -21,14 +21,14 @@
     gap: 1rem;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: var(--title-text-color);
+    color: white;
     font-weight: 700;
-    border: 1px solid var(--title-text-color);
+    border: 1px solid white;
     z-index: 1;
 }
 
 .back-button:hover .back-button-text{
-    border-bottom: 1px solid var(--title-text-color);
+    border-bottom: 1px solid white;
 }
 
 body{
@@ -41,15 +41,26 @@ h3{
     color: var(--title-text-color);
 }
 
+.ambiance-picture{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 30rem;
+    object-fit: cover;
+    z-index: -1;
+}
+
 form{
     max-width: 30rem;
-    margin: 3rem auto;
-    background-color: white;
+    margin: 5rem auto;
+    z-index: 3;
+    width: 90%;
+    background: rgba(255,255,255, 0.8);
 }
 
 .form-plant-title{
     text-align: center;
-    color: var(--title-text-color)
+    color: var(--title-text-color);
 }
 
 fieldset{
@@ -130,4 +141,38 @@ input{
 
 .submit-button:hover{
     transform: scale(1.05);
+}
+
+@media only screen and (min-width: 740px){
+
+    body{
+        display: flex;
+        align-items: center;
+    }
+
+    .ambiance-picture{
+        position: static;
+        width: 40%;
+        height: 100vh;
+        order: 2;
+    }
+
+    form{
+        order: 1;
+        width: 60%;
+        height: fit-content;
+        margin: 0 auto;
+        background-color: transparent;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+
+    .ambiance-picture{
+        width: 40%;
+    }
+
+    form{
+        width: 50%;
+    }
 }

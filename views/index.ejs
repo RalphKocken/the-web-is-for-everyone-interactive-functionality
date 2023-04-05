@@ -10,8 +10,22 @@
         </div>
         <% } %>
         <h2 class="plant-list-title">Onze Stekjes</h2>
-        <section class="plant-list" id="plant-list">
 
+        <section class="plant-list">
+            <% stekjes.forEach(stekje => { %>
+                <a class="plant-link" href="/plantpage/<%= stekje.id %>">
+                    <% if (stekje.fotos[0]) { %>
+                    <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+                    <% }else{ %>
+                    <img class="plant-list-image" src="/assets/images/no-image.svg">
+                    <% } %>
+                    <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
+                </a>
+            <% }) %>
+        </section>
+    </section>    
+        <!-- <section class="plant-list" id="plant-list">
+            <section class="first-plant-and-rest-of-plants-section-1">
                 <section class="first-plant">
                     <% stekjes.slice(0, 1).forEach(stekje => { %>
                         <a class="plant-link-first-link" href="/plantpage/<%= stekje.id %>">
@@ -22,23 +36,38 @@
                             <% } %>
                             <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
                         </a>
-                    <% }) %>   
-                </section>     
-                <section class="rest-of-plants">
-                        <% stekjes.slice(1, 7).forEach(stekje => { %>
-                            <a class="plant-link" href="/plantpage/<%= stekje.id %>">
-                                <% if (stekje.fotos[0]) { %>
-                                <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
-                                <% }else{ %>
-                                <img class="plant-list-image" src="/assets/images/plantphoto.webp">
-                                <% } %>
-                                <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
-                            </a>
-                        <% }) %>
+                    <% }) %>
                 </section>
+            
+                <section class="rest-of-plants-section-1">
+                    <% stekjes.slice(1, 5).forEach(stekje => { %>
+                        <a class="plant-link" href="/plantpage/<%= stekje.id %>">
+                            <% if (stekje.fotos[0]) { %>
+                            <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+                            <% }else{ %>
+                            <img class="plant-list-image" src="/assets/images/plantphoto.webp">
+                            <% } %>
+                            <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
+                        </a>
+                    <% }) %>  
+                </section>
+            </section>
+
+            <section class="rest-of-plants-section-2">
+                <% stekjes.slice(7).forEach(stekje => { %>
+                    <a class="plant-link" href="/plantpage/<%= stekje.id %>">
+                        <% if (stekje.fotos[0]) { %>
+                        <img class="plant-list-image" src="<%= stekje.fotos[0].original%>" width="<%= stekje.fotos[0].width%>" height="<%= stekje.fotos[0].height%>" loading="lazy" alt="plant-image">
+                        <% }else{ %>
+                        <img class="plant-list-image" src="/assets/images/plantphoto.webp">
+                        <% } %>
+                        <h4 class="plant-list-plant-title"><%= stekje.naam %></h4>
+                    </a>
+                <% }) %>
+            </section>
         </section>
         <button class="load-more-plants-button button">Laad meer stekjes(*deze knop werkt nog niet)</button>
-    </section>
+    </section> -->
 
     <section class="general-information">
         <section class="about-us general-information-part">

@@ -11,7 +11,7 @@ const index = express.Router()
 index.get('/', (request, response) => {            
     const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"   // de basis url als cpnstante
     const stekjeUrl = baseUrl + '/stekjes?'                         // het endpoint uit de api waaruit ik de stekjes fetch
-
+    
 fetchJson(stekjeUrl).then((data) =>{
       let renderData = {  //object die meegestuurd wordt bij het renderen van de homepage
         stekjes: data.stekjes, // dit is de data uit de stekjes API

@@ -10,7 +10,8 @@ plantpage.get('/:id', (request, response) => {
     const baseUrl = "https://api.buurtcampus-oost.fdnd.nl/api/v1"
     let id = request.params.id
     let stekjeUrl = baseUrl +'/stekjes?id='+ id
-     fetchJson(stekjeUrl).then((data) => {
+    
+    fetchJson(stekjeUrl).then((data) => {
       response.render('plantpage', data)
        })
     })
