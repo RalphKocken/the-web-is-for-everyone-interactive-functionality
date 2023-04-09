@@ -45,7 +45,15 @@ Conclusie: Progressive Enhancement is bedoeld om de maker een sterke website te 
 
 ## Installatie
 
+1. Installeer de nieuwst versie van Node.js.
+2. Clone deze repository.
+3. Open het project in een code-editor en open de terminal.
+4. Voer npm install uit.
+5. Met npm start voor je het start script uit. Check of de port beschikbaar is. Dit project draait op 8000.
+
 ## Gebruik
+
+Op de homepagina kan je vinden wat het concept is van PlantSwap. Je kunt een stekje aanmelden via een formulier dat vervolgens aan de stekjeslijst wordt toegevoegd. In de stekjeslijst kun je een stekje aanklikken waarmee je naar een pagina wordt gestuurd met specifieke info over het stekje. Verder is er op de homepagina nog meer informatie over PlantSwap te vinden.
 
 ## Bronnen
 
