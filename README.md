@@ -4,7 +4,8 @@
 
 
 
-"Een website in opdracht van de Buurtcampus Amsterdam Oost"
+Een website in opdracht van de Buurtcampus Amsterdam Oost
+<br>
 ![visualstekjesbieb](https://user-images.githubusercontent.com/106448490/228855309-29928e34-55c6-4369-85e9-ecf02c06494a.png)
 
 
