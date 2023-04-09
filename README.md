@@ -55,7 +55,6 @@ Conclusie: Progressive Enhancement is bedoeld om de maker een sterke website te 
 
 Op de homepagina kan je vinden wat het concept is van PlantSwap. Je kunt een stekje aanmelden via een formulier dat vervolgens aan de stekjeslijst wordt toegevoegd. In de stekjeslijst kun je een stekje aanklikken waarmee je naar een pagina wordt gestuurd met specifieke info over het stekje. Verder is er op de homepagina nog meer informatie over PlantSwap te vinden.
 
-## Bronnen
 
 ## Licentie
 
